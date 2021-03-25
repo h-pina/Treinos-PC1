@@ -6,54 +6,13 @@
 //funcoes) para treinar criar o habito de escrever esse tipo de documentacao
 //na lingua ja que a maior comunidade se comunica por ela
 
-//desloca as letras na tabela ASCII
-void shiftLetters(char str[]){  
-  int i = 0;
-  while(str[i] != '\0'){
-    if( (str[i] >= 'a' && str[i] <= 'z' ) || (str[i] >= 'A' && str[i] <= 'Z')){
-      str[i]+=3;
-    }
-    i++;
-  }
-}
-
-//inverte os caracteres da linha (o ultimo vai para o inicio)
-void inverseLine(char str[]){
-  char temp;
-  int lenght=0,index;
-  while(str[lenght]!='\n'){ //string lenght
-    lenght++;
-  }
-  lenght--; //since i'll use it for indexing, i have to subtract the str[0] evaluation to prevent /n to be considered
-
-  for(index = 0; index < lenght/2; index++){
-    temp = str[index];
-    str[index] = str[lenght-index];
-    str[lenght-index] = temp;
-  }
-
-}
-
-//desloca todos os caracteres da metade em diante uma posicao para esquerda
-void shiftHalf(char str[]){
-  int lenght=0,index=0;
-  while(str[lenght]!='\n'){ //lenght string lenght
-    lenght++;
-  }
-  lenght--; // Can't change the \0 value
-  for(index = lenght/2; index<lenght;index++){
-    str[index]-=1;
-  }
-}
-
 void printstr(char str[]){
   int i = 0;
   while(str[i] != '\n'){
-      printf("%c", str[i]);
+        printf("%c", str[i]);
       i++;
   } 
   printf("\n");
-
 }
 
 //preenche todos os valores da string anterior com 00, para receber uma nova
@@ -69,6 +28,39 @@ void clearString(char str[]){
 
 }
 
+
+//desloca as letras na tabela ASCII
+void shiftLetters(char str[]){  
+  int i = 0;
+  while(str[i] != '\n'){
+    if( (str[i] >= 'a' && str[i] <= 'z' ) || (str[i] >= 'A' && str[i] <= 'Z')){
+      str[i]+=3;
+    }
+    i++;
+  }
+}
+
+//inverte os caracteres da linha (o ultimo vai para o inicio)
+void inverseLine(char str[]){
+  char temp;
+  int lenght,index;
+  for(lenght = 0; str[lenght] != '\n';lenght++){} //get string lenght
+  lenght--;
+  for(index = 0; index <= (lenght/2); index++){
+    temp = str[index];
+    str[index] = str[lenght-index];
+    str[lenght-index] = temp;
+  }
+}
+
+//desloca todos os caracteres da metade em diante uma posicao para esquerda
+void shiftHalf(char str[]){
+  int lenght=0,index=0; 
+  for(lenght = 0; str[lenght] != '\n';lenght++){} //get string lenght
+  for(index = lenght/2; str[index] != '\n';index++){
+    str[index]-=1;
+  }
+}
 
 int main(){
   int testCases;
