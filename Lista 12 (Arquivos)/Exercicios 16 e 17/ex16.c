@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------
 Descricao: Resolucao do exercicio numero 16 da Lista 12, sobre Arquivos
 Disciplina: Programacao de Computadores 1
-Dupla: Hugo Antunes Pina e Andre Guilherme de Almeida Macedo
+Dupla: Andre Guilherme de Almeida Macedo e Hugo Antunes Pina
 ---------------------------------------------------------------------*/
 
 #include <stdio.h>
