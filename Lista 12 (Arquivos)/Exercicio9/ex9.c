@@ -5,7 +5,7 @@
 //---------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------
-//Observacoes: Esse codigo interpreta palavras compostas como duas palavras distintas
+//Observacao: Esse codigo interpreta palavras compostas como duas palavras distintas
 //que possuem uma pontuacao entre si, assim, primeiro-ministro por exemplo e interpretado
 //como as palavras primeiro e ministro
 //----------------------------------------------------------------------------------------
@@ -71,18 +71,12 @@ int main(){
 
         fscanf(source, "%c", &nextChar); // coloca o proximo caracter na string, seja ele um espaço ou um '\n', por exemplo
         fputc(nextChar,dest);
-
-
-        
-
-
-
     }
     
     fclose(source);
     fclose(dest);
 
-    system("rm arquivo.txt"); 
+    system("rm arquivo.txt"); //para o linux
     system("mv aux.txt arquivo.txt");
 
     return 0;
