@@ -2,7 +2,7 @@
 
 int main (){
   int last, penult, next, count, i;
-  scanf("%i", &count); //definig variable values
+  scanf("%i", &count); //defining variable values
   penult = 0;
   last = 1;
   
